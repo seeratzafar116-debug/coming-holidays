@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* FADE */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade {
+  animation: fade 1s ease forwards;
+}
+
+/* SLIDE UP */
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 2s ease forwards;
+}
+
+/* DELAYS */
+.delay-150 { animation-delay: 0.35s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* LUXURY HEADINGS */
+h1, h2, h3 {
+  font-family: var(--font-playfair);
+}
+
+/* PREMIUM TYPOGRAPHY */
+
+/* HEADINGS (LIKE SCREENSHOT) */
+h1 {
+  font-family: var(--font-playfair);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+h2, h3 {
+  font-family: var(--font-playfair);
+  font-weight: 500;
+}
+
+/* BODY TEXT */
+body {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  color: #333;
+}
+
+/* SMALL PREMIUM TEXT (like "PREMIUM TRAVEL AGENCY") */
+.premium-label {
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #d4af37; /* GOLD */
+}
+
+/* GOLD ACCENT */
+.gold-text {
+  color: #d4af37;
+}
+
+/* HERO HEADING (MAIN BIG TEXT) */
+.hero-title {
+  font-size: 55px;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 80px;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.animate-zoom {
+  animation: slowZoom 8s ease-in-out infinite alternate;
+}
